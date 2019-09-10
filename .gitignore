@@ -11,6 +11,7 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -22,3 +23,27 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### Compiled class file ###
+*.class
+
+### Eclipse project files ###
+.settings/
+/target
+/target/
+**/target/
+
+### Log file ###
+*.log
+*.log*
+
+### BlueJ files ###
+*.ctxt
+
+### Package Files ###
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
