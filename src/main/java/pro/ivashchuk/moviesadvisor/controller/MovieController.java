@@ -8,4 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/movies")
 public class MovieController {
 
+    @GetMapping
+    public String getAllMovies(){
+        return "All_Movies";
+    }
 }
