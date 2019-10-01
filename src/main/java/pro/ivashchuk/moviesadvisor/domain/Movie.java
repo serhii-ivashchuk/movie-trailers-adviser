@@ -8,4 +8,14 @@ public class Movie {
     public Movie() {
     }
 
+    public Movie(Long id, String movieName, int ranking) {
+        this.id = id;
+        this.movieName = movieName;
+        this.ranking = ranking;
+    }
+
+    public Movie(String movieName, int ranking) {
+        this.movieName = movieName;
+        this.ranking = ranking;
+    }
 }
