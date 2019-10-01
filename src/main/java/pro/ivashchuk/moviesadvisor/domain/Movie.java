@@ -4,4 +4,8 @@ public class Movie {
     private Long id;
     private String movieName;
     private int ranking;
+
+    public Movie() {
+    }
+
 }
