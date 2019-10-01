@@ -20,7 +20,7 @@ public class MovieControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testMovieCotntrollerReturnsAllMoviesPageView() throws Exception{
+    public void testMovieControllerReturnsAllMoviesPageView() throws Exception{
         mockMvc.perform(get("/movies"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("All_Movies"))
