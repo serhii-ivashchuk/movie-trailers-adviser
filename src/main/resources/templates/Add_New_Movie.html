@@ -8,5 +8,12 @@
 </head>
 <body>
 Let's add new movie!
+
+<form method="POST" th:object="${movie}">
+    <div><h3>Movie Name:</h3>
+    <button>Submit</button>
+    </div>
+</form>
+
 </body>
 </html>
