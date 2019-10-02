@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" lang="en>
 <head>
+    <meta charset="UTF-8">
     <title>Welcome to Movie Advisor App!</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
 </head>
 <body>
     <h1>Welcome to the Movie Advisor App</h1><br>
     <a href="/login">Login</a><br>
     <br>
-    <a href="/registration">Register</a><br>  <br>
+    <a href="/registration">Register</a><br>
+    Sign in Sign up<br>
     <a href="/movies">Movies</a><br>
     <img th:src="@{/images/MovieAdvisorLogo.png}"/>
 
