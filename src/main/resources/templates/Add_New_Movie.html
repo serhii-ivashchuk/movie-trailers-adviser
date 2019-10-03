@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Let's add new movie!</title>
-    <link rel="stylesheet" th:href="@{css/styles.css}" />
+    <link rel="stylesheet" th:href="@{css/styles.css}"/>
 </head>
 <body>
 Let's add new movie!
-
 <form method="POST" th:object="${movie}">
     <div><h3>Movie Name:</h3>
-    <button>Submit</button>
+        <label for="movieName">Movie Name: </label>
+        <input type="text" th:field="*{movieName}"/>
+        <br/>
+        <label for="ranking">Your Movie Rank (from 1 to 10): </label>
+        <input type="text" th:field="*{ranking}"/>
+        <br/>
+        <button>Submit</button>
+        <input type="submit" value="Submit order"/>
     </div>
 </form>
 
