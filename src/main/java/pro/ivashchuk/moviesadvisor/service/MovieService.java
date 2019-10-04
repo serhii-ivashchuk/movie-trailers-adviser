@@ -9,4 +9,5 @@ public interface MovieService {
     List<Movie> getAllMovies();
     Movie getMovieById(Long id);
     void addMovie(Movie movie);
+    void updateMovie(Movie movie);
 }
