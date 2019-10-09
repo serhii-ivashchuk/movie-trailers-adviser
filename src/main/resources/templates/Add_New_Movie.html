@@ -11,10 +11,10 @@ Let's add new movie!
 <form method="POST" th:object="${movie}">
     <div><h3>Movie Name:</h3>
         <label for="movieName">Movie Name: </label>
-        <input type="text" th:field="*{movieName}"/>
+        <input name="movieName" type="text" th:field="*{movieName}"/>
         <br/>
         <label for="ranking">Your Movie Rank (from 1 to 10): </label>
-        <input type="text" th:field="*{ranking}"/>
+        <input name="ranking" type="text" th:field="*{ranking}"/>
         <br/>
         <button>Submit</button>
         <input type="submit" value="Submit movie"/>
