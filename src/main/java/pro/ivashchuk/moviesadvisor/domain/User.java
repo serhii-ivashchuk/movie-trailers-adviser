@@ -1,6 +1,12 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class User {
+
+    @Id
     private Long id;
 
     public String getUsername() {
