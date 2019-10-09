@@ -21,4 +21,9 @@ public class MovieController {
         model.addAttribute(new Movie());
         return "Add_New_Movie";
     }
+
+    @PostMapping("/addNewMovie")
+    public String processNewMovie (Movie movie) {
+        return "redirect:/";
+    }
 }
