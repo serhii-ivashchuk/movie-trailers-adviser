@@ -1,6 +1,12 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Movie {
+
+    @Id
     private Long id;
     private String movieName;
     private int ranking;
