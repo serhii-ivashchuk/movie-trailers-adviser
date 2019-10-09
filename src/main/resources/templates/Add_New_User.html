@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Become a Movie Advisor!</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}"/>
+</head>
+<body>
+To become a Movie Advisor, please fill the Form!
+<form method="POST" th:object="${user}">
+    <div><h3>Your Name:</h3>
+        <label for="userName">User Name: </label>
+        <input type="text" th:field="*{userName}"/>
+        <br/>
+        <label for="password">Your password: </label>
+        <input type="text" th:field="*{password}"/>
+        <br/>
+        <button>Submit</button>
+        <input type="submit" value="Submit user"/>
+    </div>
+</form>
+
+</body>
+</html>
