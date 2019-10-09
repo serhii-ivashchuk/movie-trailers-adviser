@@ -1,15 +1,18 @@
 package pro.ivashchuk.moviesadvisor.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pro.ivashchuk.moviesadvisor.domain.User;
 
 @Controller
 @RequestMapping("/users")
 public class UserRegistrationController {
 
     @GetMapping("/registration")
-    public String userRegistration(){
+    public String userRegistration(Model model){
+        model.addAttribute(new User());
         return "Add_New_User";
     }
 }
