@@ -5,7 +5,7 @@ import pro.ivashchuk.moviesadvisor.domain.Movie;
 
 import java.util.List;
 
-public interface MovieRepository extends JpaRepository<Movie, Long> {
+public interface JpaMovieRepository extends JpaRepository<Movie, Long> {
 
     List<Movie> findAll();
 }
