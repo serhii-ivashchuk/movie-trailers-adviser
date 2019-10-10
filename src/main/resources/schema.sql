@@ -1,6 +1,6 @@
  create table if not exists Movie (
   id identity,
-  movieName varchar(50) not null,
+  movie_Name varchar(100) not null,
   ranking varchar(2) not null
 );
 
