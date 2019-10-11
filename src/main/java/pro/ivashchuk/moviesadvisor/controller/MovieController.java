@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/movies")
 public class MovieController {
@@ -23,7 +25,7 @@ public class MovieController {
     }
 
     @PostMapping("/addNewMovie")
-    public String processNewMovie (Movie movie) {
+    public String processNewMovie (@Valid Movie movie) {
         return "redirect:/";
     }
 }
