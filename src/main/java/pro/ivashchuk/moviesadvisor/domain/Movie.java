@@ -3,6 +3,7 @@ package pro.ivashchuk.moviesadvisor.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Movie {
@@ -10,7 +11,10 @@ public class Movie {
     @Id
     @GeneratedValue
     private Long id;
+
+    @NotBlank(message="Movie Name is required")
     private String movieName;
+
     private int ranking;
 
     public String getMovieName() {
