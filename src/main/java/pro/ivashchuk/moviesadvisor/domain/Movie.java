@@ -15,6 +15,7 @@ public class Movie {
     @NotBlank(message="Movie Name is required")
     private String movieName;
 
+    @NotBlank(message = "Your Rank is required")
     private int ranking;
 
     public String getMovieName() {
