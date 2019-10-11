@@ -3,6 +3,7 @@ package pro.ivashchuk.moviesadvisor.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User {
@@ -11,6 +12,7 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @NotBlank(message="User Name is required")
     private String username;
     private String password;
 
