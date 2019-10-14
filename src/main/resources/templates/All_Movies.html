@@ -6,8 +6,18 @@
     <title>All Movies</title>
     <link rel="stylesheet" th:href="@{css/styles.css}" />
 </head>
-<body>
+<p>
 All Movies
 <a href="/movies/addNewMovie">Add New Movie!</a><br>
+<br>
+<p>Here will be the Movies List</p>
+<div th:each="movie : ${movies}">
+    <span text="">Movie Name</span>
+    <p th:text="${movie.movieName}">Movie Name</p>
+    <span text="">Movie Rank</span>
+    <p th:text="${movie.ranking}">Rank</p><br/>
+
+</div>
+<p>End of the Movies List</p>
 </body>
 </html>
