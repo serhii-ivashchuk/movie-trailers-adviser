@@ -7,11 +7,13 @@
     <link rel="stylesheet" th:href="@{css/styles.css}" />
 </head>
 <body>
-
 <a href="/movies">All Movies!</a><br>
 <a href="/movies/addNewMovie">Add New Movie!</a><br>
-
 <br>
 <p>Here will be the Movie</p>
+<div>
+    <p th:text="${movie.movieName}">Movie Name</p><br>
+    <p th:text="${movie.ranking}">Movie rank</p>
+</div>
 </body>
 </html>
