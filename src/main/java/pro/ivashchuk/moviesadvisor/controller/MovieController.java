@@ -39,6 +39,7 @@ public class MovieController {
 
     @PostMapping("/addNewMovie")
     public String processNewMovie(@Valid Movie movie) {
+        jpaMovieRepository.save(movie);
         return "redirect:/";
     }
 }
