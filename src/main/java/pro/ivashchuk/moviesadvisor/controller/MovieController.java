@@ -30,6 +30,10 @@ public class MovieController {
         return "All_Movies";
     }
 
+    @GetMapping
+    public String getMovieById() {
+        return "Movie";
+    }
 
     @GetMapping("/addNewMovie")
     public String addNewMovie(Model model) {
