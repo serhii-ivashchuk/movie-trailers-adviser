@@ -9,5 +9,6 @@ import java.util.List;
 public interface JpaMovieRepository extends JpaRepository<Movie, Long> {
 
     List<Movie> findAll();
+    Movie findById(Id id);
     Movie save(Movie movie);
 }
