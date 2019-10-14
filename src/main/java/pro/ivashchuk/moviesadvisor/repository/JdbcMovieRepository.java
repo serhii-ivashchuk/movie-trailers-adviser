@@ -1,7 +1,9 @@
 package pro.ivashchuk.moviesadvisor.repository;
 
+import org.springframework.stereotype.Repository;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 
+@Repository
 public class JdbcMovieRepository implements MovieRepository {
 
     @Override
