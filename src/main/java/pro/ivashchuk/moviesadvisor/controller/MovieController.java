@@ -30,7 +30,7 @@ public class MovieController {
         return "All_Movies";
     }
 
-    @GetMapping
+    @GetMapping("/Movie")
     public String getMovieById() {
         return "Movie";
     }
