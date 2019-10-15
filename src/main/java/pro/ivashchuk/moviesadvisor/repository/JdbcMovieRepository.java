@@ -17,7 +17,8 @@ public class JdbcMovieRepository implements MovieRepository {
 
     @Override
     public Iterable<Movie> findAll() {
-        return null;
+
+        return jdbcTemplate.query("select id, movie_Name, ranking from Movie", this::mapRowToMovie);
     }
 
     @Override
