@@ -5,6 +5,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 @Repository
 public class JdbcMovieRepository implements MovieRepository {
 
@@ -29,5 +32,12 @@ public class JdbcMovieRepository implements MovieRepository {
     @Override
     public Movie save(Movie movie) {
         return null;
+    }
+
+    private Movie mapRowToMovie(ResultSet resultSet, int rowNum) throws SQLException {
+        return new Movie(
+                resultSet.getLong("id"),
+                resultSet.getString("movie_Name"),
+                resultSet.getInt("ranking"));
     }
 }
