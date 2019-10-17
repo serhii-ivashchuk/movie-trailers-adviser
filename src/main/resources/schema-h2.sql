@@ -5,8 +5,10 @@
 );
 
 
- create table if not exists User (
-  id identity,
+ create table if not exists Users (
+--  id identity,
   username varchar(25) not null,
-  password varchar(10) not null
+  password varchar(50) not null,
+  enabled boolean not null,
+  PRIMARY KEY (username)
 );
