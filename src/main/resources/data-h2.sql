@@ -41,3 +41,9 @@ values ('Robert Martin', '{noop}password', true);
 insert into Users (username, password, enabled)
 values ('admin', '{noop}pass', true);
 
+
+INSERT INTO UserAuthorities (username, authority)
+  values ('Serhii', 'ROLE_USER');
+INSERT INTO UserAuthorities (username, authority)
+    values ('admin', 'ROLE_ADMIN');
+
