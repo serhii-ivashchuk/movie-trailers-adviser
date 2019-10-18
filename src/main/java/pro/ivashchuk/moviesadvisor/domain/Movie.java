@@ -47,4 +47,11 @@ public class Movie {
         this.movieName = movieName;
         this.ranking = ranking;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Movie id[id=%d, movieName='%s', movieRanking='%d']",
+                id, movieName, ranking);
+    }
 }
