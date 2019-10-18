@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.User;
+import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 
 @Controller
 @RequestMapping("/users")
