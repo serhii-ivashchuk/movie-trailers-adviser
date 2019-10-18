@@ -3,6 +3,7 @@ package pro.ivashchuk.moviesadvisor.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.User;
 import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
@@ -15,5 +16,11 @@ public class UserRegistrationController {
     public String userRegistration(Model model){
         model.addAttribute("user", new User());
         return "Add_New_User";
+    }
+
+    @PostMapping
+    public String processNewUser(@Valid User user) {
+        jpaUserRepository.save(user);
+        return "redirect:/";
     }
 }
