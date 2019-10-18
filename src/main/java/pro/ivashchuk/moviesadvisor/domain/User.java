@@ -3,9 +3,11 @@ package pro.ivashchuk.moviesadvisor.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Table(name="Users")
 public class User {
 
     @Id
