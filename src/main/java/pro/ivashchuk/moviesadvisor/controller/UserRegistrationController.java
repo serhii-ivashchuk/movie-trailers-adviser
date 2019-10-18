@@ -12,7 +12,7 @@ public class UserRegistrationController {
 
     @GetMapping("/registration")
     public String userRegistration(Model model){
-        model.addAttribute(new User());
+        model.addAttribute("user", new User());
         return "Add_New_User";
     }
 }
