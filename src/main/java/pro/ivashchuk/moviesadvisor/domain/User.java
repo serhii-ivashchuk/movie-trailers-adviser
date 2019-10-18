@@ -41,4 +41,11 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "User id[id=%d, username='%s', user password='%d']",
+                id, username, password);
+    }
 }
