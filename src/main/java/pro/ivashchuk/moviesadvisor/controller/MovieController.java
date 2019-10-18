@@ -37,7 +37,7 @@ public class MovieController {
 
     @GetMapping("/addNewMovie")
     public String addNewMovie(Model model) {
-        model.addAttribute(new Movie());
+        model.addAttribute("movie",new Movie());
         return "Add_New_Movie";
     }
 
