@@ -11,6 +11,9 @@
     <br>
     <a href="/users/registration">Register</a><br>
     Sign in Sign up<br>
+    <form method="POST" th:action="@{/logout}">
+        <input type="submit" value="Logout"/>
+    </form>
     <a href="/movies">Movies</a><br>
     <img th:src="@{/images/MovieAdvisorLogo.png}"/>
 
