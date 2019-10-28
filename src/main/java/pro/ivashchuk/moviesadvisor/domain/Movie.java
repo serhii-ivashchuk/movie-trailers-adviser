@@ -18,6 +18,8 @@ public class Movie {
 
     private int ranking;
 
+    private String poster;
+
     public String getMovieName() {
         return movieName;
     }
@@ -37,10 +39,19 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String movieName, int ranking) {
+    public String getPoster() {
+        return poster;
+    }
+
+    public void setPoster(String poster) {
+        this.poster = poster;
+    }
+
+    public Movie(Long id, String movieName, int ranking, String poster) {
         this.id = id;
         this.movieName = movieName;
         this.ranking = ranking;
+        this.poster = poster;
     }
 
     public Movie(String movieName, int ranking) {
