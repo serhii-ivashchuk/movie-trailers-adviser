@@ -62,7 +62,7 @@ public class Movie {
     @Override
     public String toString() {
         return String.format(
-                "Movie id[id=%d, movieName='%s', movieRanking='%d']",
-                id, movieName, ranking);
+                "Movie id[id=%d, movieName='%s', movieRanking='%d', poster='%s']",
+                id, movieName, ranking, poster);
     }
 }
