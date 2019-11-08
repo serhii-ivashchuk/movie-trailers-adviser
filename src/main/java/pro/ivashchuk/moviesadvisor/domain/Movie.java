@@ -20,6 +20,8 @@ public class Movie {
 
     private String poster;
 
+    private String youtubeLink;
+
     public String getMovieName() {
         return movieName;
     }
