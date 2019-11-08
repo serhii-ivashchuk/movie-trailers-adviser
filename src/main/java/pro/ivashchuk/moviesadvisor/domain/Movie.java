@@ -46,6 +46,14 @@ public class Movie {
         this.poster = poster;
     }
 
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
+    }
+
     public Movie() {
     }
 
