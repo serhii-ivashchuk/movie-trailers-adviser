@@ -49,11 +49,12 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Long id, String movieName, int ranking, String poster) {
+    public Movie(Long id, String movieName, int ranking, String poster, String youtubeLink) {
         this.id = id;
         this.movieName = movieName;
         this.ranking = ranking;
         this.poster = poster;
+        this.youtubeLink = youtubeLink;
     }
 
     public Movie(String movieName, int ranking) {
