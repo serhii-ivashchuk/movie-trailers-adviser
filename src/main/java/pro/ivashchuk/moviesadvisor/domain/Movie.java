@@ -38,15 +38,15 @@ public class Movie {
         this.ranking = ranking;
     }
 
-    public Movie() {
-    }
-
     public String getPoster() {
         return poster;
     }
 
     public void setPoster(String poster) {
         this.poster = poster;
+    }
+
+    public Movie() {
     }
 
     public Movie(Long id, String movieName, int ranking, String poster) {
