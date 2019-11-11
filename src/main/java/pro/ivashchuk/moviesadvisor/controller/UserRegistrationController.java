@@ -14,6 +14,13 @@ public class UserRegistrationController {
 
     final static Logger log = LoggerFactory.getLogger(UserRegistrationController.class);
 
+    private JpaUserRepository jpaUserRepository;
+
+
+    public UserRegistrationController(JpaUserRepository jpaUserRepository) {
+        this.jpaUserRepository = jpaUserRepository;
+    }
+
     @GetMapping("/registration")
     public String userRegistration(Model model){
         model.addAttribute("user", new User());
