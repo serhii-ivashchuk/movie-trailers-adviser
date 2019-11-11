@@ -11,9 +11,16 @@
 <a href="/movies/addNewMovie">Add New Movie!</a><br>
 <br>
 <p>Here will be the Movie</p>
-<div>
-    <p th:text="${movie.movieName}">Movie Name</p><br>
-    <p th:text="${movie.ranking}">Movie rank</p>
+
+<div th:object="${movie}">
+    <span text="">Movie Name</span>
+    <p th:text="${movie.movieName}">Movie Name</p>
+    <span text="">Movie Rank</span>
+    <p th:text="${movie.ranking}">Rank</p>
+    <span text="">Movie id</span>
+    <p th:text="${movie.id}">id</p>
+    <p th:utext="${movie.poster}">Movie Name</p><br>
+    <p th:utext="${movie.youtubeLink}">Youtube link</p>
 </div>
 </body>
 </html>
