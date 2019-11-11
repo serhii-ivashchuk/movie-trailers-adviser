@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org" lang="en"q>
+      xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Welcome to Movie Advisor App!</title>
     <link rel="stylesheet" th:href="@{css/styles.css}" />
@@ -15,6 +16,7 @@
         <input type="submit" value="Logout"/>
     </form>
     <a href="/movies">Movies</a><br>
+    <a href="/actors">Actors</a><br>
     <img th:src="@{/images/MovieAdvisorLogo.png}"/>
 
 </body>
