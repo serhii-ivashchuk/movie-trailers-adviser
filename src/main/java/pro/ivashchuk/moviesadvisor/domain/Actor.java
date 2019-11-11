@@ -33,4 +33,10 @@ public class Actor {
 
     public Actor() {
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Actor id[id=%d, name='%s', surname='%s'" , id, name, surname);
+    }
 }
