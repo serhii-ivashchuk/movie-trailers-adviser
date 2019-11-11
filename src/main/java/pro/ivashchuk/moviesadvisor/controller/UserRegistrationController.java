@@ -29,8 +29,9 @@ public class UserRegistrationController {
     }
 
     @GetMapping("/registration")
-    public String userRegistration(Model model){
-        model.addAttribute("user", new User());
+    public String userRegistration(Model model) {
+        model.addAttribute("user", new UserRegistrationForm());
+        log.info("userRegistration() of UserRegistrationController is invoked");
         return "Add_New_User";
     }
 
