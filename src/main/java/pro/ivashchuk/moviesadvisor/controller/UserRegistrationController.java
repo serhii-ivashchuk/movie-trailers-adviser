@@ -35,9 +35,11 @@ public class UserRegistrationController {
         return "Add_New_User";
     }
 
-    @PostMapping
-    public String processNewUser(@Valid User user) {
-        jpaUserRepository.save(user);
+    @PostMapping("/registration")
+    public String processNewUser(@Valid UserRegistrationForm user) {
+        jpaUserRepository.save(user.toUser(passwordEncoder));
+        log.info("processNewUser of UserRegistrationController is invoked");
+        log.info("User: " + user);
         return "redirect:/";
     }
 }
