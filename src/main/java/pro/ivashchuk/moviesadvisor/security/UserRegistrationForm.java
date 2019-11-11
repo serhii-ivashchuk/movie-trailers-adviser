@@ -2,6 +2,8 @@ package pro.ivashchuk.moviesadvisor.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import pro.ivashchuk.moviesadvisor.domain.User;
 
 public class UserRegistrationForm {
 
@@ -33,5 +35,10 @@ public class UserRegistrationForm {
 
     public void setPhrase(String phrase) {
         this.phrase = phrase;
+    }
+
+    public User toUser(PasswordEncoder passwordEncoder) {
+        log.info("toUser() of UserRegistrationForm is invoked");
+        return new User(username, passwordEncoder.encode(password), phrase);
     }
 }
