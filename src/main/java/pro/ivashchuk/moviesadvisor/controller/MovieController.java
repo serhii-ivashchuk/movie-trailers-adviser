@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
@@ -35,9 +36,13 @@ public class MovieController {
         return "All_Movies";
     }
 
-    @GetMapping("/Movie")
-        public String getMovieById() {
+    @GetMapping("/Movie/{id}")
+        public String getMovieById(@PathVariable("id") Long id, Model model) {
         log.info("getMovieById() of MovieController is invoked");
+        System.out.println("getMovieById() of MovieController is invoked");
+        Movie movie = jpaMovieRepository.findById(id).get();
+        System.out.println("movie "+movie);
+        model.addAttribute("movie", movie);
         return "Movie";
     }
 
