@@ -1,5 +1,8 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Actor {
     private String name;
     private String surname;
