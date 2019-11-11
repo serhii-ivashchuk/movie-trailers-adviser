@@ -12,6 +12,8 @@ import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 @RequestMapping("/users")
 public class UserRegistrationController {
 
+    final static Logger log = LoggerFactory.getLogger(UserRegistrationController.class);
+
     @GetMapping("/registration")
     public String userRegistration(Model model){
         model.addAttribute("user", new User());
