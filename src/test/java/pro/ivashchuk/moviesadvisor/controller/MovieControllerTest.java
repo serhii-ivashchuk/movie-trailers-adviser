@@ -26,4 +26,14 @@ public class MovieControllerTest {
                 .andExpect(view().name("All_Movies"))
                 .andExpect(content().string(containsString("All Movies")));
     }
+
+    @Test
+    public void testMovieControllerReturnsAddNewMoviePageView() throws Exception{
+        mockMvc.perform(get("/movies/addNewMovie"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("Add_New_Movie"))
+                .andExpect(content().string(containsString("Let's add new movie!")));
+    }
+
+//    All Movies!
 }
