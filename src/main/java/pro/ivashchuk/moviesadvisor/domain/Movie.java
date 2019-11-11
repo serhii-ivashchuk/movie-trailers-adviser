@@ -22,6 +22,10 @@ public class Movie {
 
     private String youtubeLink;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getMovieName() {
         return movieName;
     }
