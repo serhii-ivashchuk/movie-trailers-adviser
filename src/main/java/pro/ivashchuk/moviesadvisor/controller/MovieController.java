@@ -61,4 +61,10 @@ public class MovieController {
         log.info("Movie: " + movie);
         return "redirect:/movies";
     }
+
+    @GetMapping("/deleteMovie/{id}")
+    public String deleteMovie(@PathVariable("id") Long id, Model model) {
+        jpaMovieRepository.delete(jpaMovieRepository.findById(id).get());
+        return "redirect:/actors";
+    }
 }
