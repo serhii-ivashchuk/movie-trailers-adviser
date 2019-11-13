@@ -41,7 +41,7 @@ public class MovieController {
         log.info("getMovieById() of MovieController is invoked");
         System.out.println("getMovieById() of MovieController is invoked");
         Movie movie = jpaMovieRepository.findById(id).get();
-        System.out.println("movie "+movie);
+        System.out.println("movie " + movie);
         model.addAttribute("movie", movie);
         return "Movie";
     }
