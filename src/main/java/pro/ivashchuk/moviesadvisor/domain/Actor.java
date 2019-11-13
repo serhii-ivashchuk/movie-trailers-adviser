@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Actor {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
@@ -37,6 +37,6 @@ public class Actor {
     @Override
     public String toString() {
         return String.format(
-                "Actor id[id=%d, name='%s', surname='%s'" , id, name, surname);
+                "Actor id[id=%d, name='%s', surname='%s'", id, name, surname);
     }
 }
