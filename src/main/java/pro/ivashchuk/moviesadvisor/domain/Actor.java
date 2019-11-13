@@ -34,6 +34,12 @@ public class Actor {
     public Actor() {
     }
 
+    public Actor(Long id, String name, String surname) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+    }
+
     @Override
     public String toString() {
         return String.format(
