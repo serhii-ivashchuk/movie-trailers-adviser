@@ -1,36 +1,63 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
-        import org.springframework.security.core.GrantedAuthority;
-        import org.springframework.security.core.authority.SimpleGrantedAuthority;
-        import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-        import javax.persistence.*;
-        import javax.validation.constraints.NotBlank;
-        import java.util.Arrays;
-        import java.util.Collection;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.Arrays;
+import java.util.Collection;
 
 @Entity
-@Table(name="Users")
-public class User implements UserDetails
-{
+@Table(name = "Users")
+public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message="User Name is required")
+    @NotBlank(message = "User Name is required")
     private String username;
 
-    @NotBlank(message="Password is required")
+    @NotBlank(message = "Password is required")
     private String password;
 
-    @NotBlank(message="Phrase is required")
+    @NotBlank(message = "Phrase is required")
     private String phrase;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+
+    public void setPhrase(String phrase) {
+        this.phrase = phrase;
+    }
+
 
     @Override
     public boolean isAccountNonExpired() {
@@ -61,21 +88,9 @@ public class User implements UserDetails
         this.phrase = phrase;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     @Override
