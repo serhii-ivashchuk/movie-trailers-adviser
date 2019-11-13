@@ -37,7 +37,7 @@ public class MovieController {
     }
 
     @GetMapping("/Movie/{id}")
-        public String getMovieById(@PathVariable("id") Long id, Model model) {
+    public String getMovieById(@PathVariable("id") Long id, Model model) {
         log.info("getMovieById() of MovieController is invoked");
         System.out.println("getMovieById() of MovieController is invoked");
         Movie movie = jpaMovieRepository.findById(id).get();
@@ -49,7 +49,7 @@ public class MovieController {
     @GetMapping("/addNewMovie")
     public String addNewMovie(Model model) {
         log.info("addNewMovie() of MovieController is invoked");
-        model.addAttribute("movie",new Movie());
+        model.addAttribute("movie", new Movie());
         return "Add_New_Movie";
     }
 
@@ -57,8 +57,8 @@ public class MovieController {
     public String processNewMovie(@Valid Movie movie) {
         log.info("processNewMovie (http post()) of MovieController is invoked");
         jpaMovieRepository.save(movie);
-        log.info("processNewMovie() > jpaMovieRepository() save is invoked");
-        log.info("Movie: "+movie);
+        log.info("processNewMovie()  jpaMovieRepository.save() is invoked");
+        log.info("Movie: " + movie);
         return "redirect:/movies";
     }
 }
