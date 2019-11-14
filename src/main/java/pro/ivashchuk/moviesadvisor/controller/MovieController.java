@@ -36,16 +36,6 @@ public class MovieController {
         return "All_Movies";
     }
 
-    @GetMapping("/Movie/{id}")
-    public String getMovieById(@PathVariable("id") Long id, Model model) {
-        log.info("getMovieById() of MovieController is invoked");
-        System.out.println("getMovieById() of MovieController is invoked");
-        Movie movie = jpaMovieRepository.findById(id).get();
-        System.out.println("movie " + movie);
-        model.addAttribute("movie", movie);
-        return "Movie";
-    }
-
     @GetMapping("/addNewMovie")
     public String addNewMovie(Model model) {
         log.info("addNewMovie() of MovieController is invoked");
@@ -60,6 +50,16 @@ public class MovieController {
         log.info("processNewMovie()  jpaMovieRepository.save() is invoked");
         log.info("Movie: " + movie);
         return "redirect:/movies";
+    }
+
+    @GetMapping("/Movie/{id}")
+    public String getMovieById(@PathVariable("id") Long id, Model model) {
+        log.info("getMovieById() of MovieController is invoked");
+        System.out.println("getMovieById() of MovieController is invoked");
+        Movie movie = jpaMovieRepository.findById(id).get();
+        System.out.println("movie " + movie);
+        model.addAttribute("movie", movie);
+        return "Movie";
     }
 
     @GetMapping("/deleteMovie/{id}")
