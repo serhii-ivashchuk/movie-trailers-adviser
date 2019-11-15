@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @GetMapping
-    public String getAllUsers() {
+    public String getAllUsers(Model model) {
+        List<User> users = jpaUserRepository.findAll();
+        model.addAttribute("users", users);
         return "All_Users";
     }
 
