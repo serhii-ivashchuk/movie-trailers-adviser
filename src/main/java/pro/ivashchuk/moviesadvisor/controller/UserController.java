@@ -16,8 +16,10 @@ public class UserController {
         return "All_Users";
     }
 
-    @GetMapping("/user")
-    public String getUser() {
-        return "User";
+    @GetMapping("/registration")
+    public String addNewUser(Model model) {
+        model.addAttribute("user", new UserRegistrationForm());
+        log.info("userRegistration() of UserRegistrationController is invoked");
+        return "Add_New_User";
     }
 }
