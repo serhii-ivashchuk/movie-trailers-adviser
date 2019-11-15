@@ -30,4 +30,19 @@ public class UserController {
         log.info("User: " + user);
         return "redirect:/";
     }
+
+    @GetMapping("/user/{id}")
+    public String getUserById(@PathVariable("id") Long id, Model model) {
+        User user = jpaUserRepository.findById(id).get();
+        model.addAttribute("user", user);
+        return "User";
+    }
+
+    @GetMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable("id") Long id, Model model) {
+        User user = jpaUserRepository.findById(id).get();
+        jpaUserRepository.delete(user);
+        model.addAttribute("user", user);
+        return "redirect:/users";
+    }
 }
