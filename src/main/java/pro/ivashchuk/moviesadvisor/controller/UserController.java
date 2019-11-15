@@ -2,16 +2,34 @@ package pro.ivashchuk.moviesadvisor.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pro.ivashchuk.moviesadvisor.domain.User;
+import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
+import pro.ivashchuk.moviesadvisor.security.UserRegistrationForm;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/users")
 public class UserController {
 
     final static Logger log = LoggerFactory.getLogger(UserController.class);
+
+    private JpaUserRepository jpaUserRepository;
+    private PasswordEncoder passwordEncoder;
+
+
+    public UserController(JpaUserRepository jpaUserRepository, PasswordEncoder passwordEncoder) {
+        this.jpaUserRepository = jpaUserRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @GetMapping
     public String getAllUsers(Model model) {
