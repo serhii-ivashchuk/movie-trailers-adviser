@@ -53,6 +53,10 @@ public class UserController {
         return "redirect:/";
     }
 
+    public String updateUserById(){
+        return "";
+    }
+
     @GetMapping("/user/{id}")
     public String getUserById(@PathVariable("id") Long id, Model model) {
         User user = jpaUserRepository.findById(id).get();
