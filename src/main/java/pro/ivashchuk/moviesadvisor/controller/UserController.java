@@ -52,9 +52,10 @@ public class UserController {
         log.info("User: " + user);
         return "redirect:/";
     }
+    @PostMapping("/user/{id}")
+    public String updateUserById(@PathVariable("id") Long id, Model model){
 
-    public String updateUserById(){
-        return "";
+        return "User";
     }
 
     @GetMapping("/user/{id}")
