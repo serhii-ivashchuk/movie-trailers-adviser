@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Actors</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
+</head>
+<body>
+<a href="/">Home</a>
+All Actors
+<a href="/actors/addNewActor">Add New Actor!</a><br>
+<br>
+<p>Here will be the Actors List</p>
+<div th:each="actor : ${actors}">
+    <span text="">Actor Name</span>
+    <p th:text="${actor.name}">Movie Name</p>
+    <span text="">Actor Surname</span>
+    <p th:text="${actor.surname}">Rank</p><br/>
+
+</div>
+<p>End of the Actors List</p>
+</body>
+</html>
