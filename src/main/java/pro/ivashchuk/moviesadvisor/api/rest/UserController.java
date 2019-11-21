@@ -9,7 +9,7 @@ import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 
 import java.util.List;
 
-@RestController
+@RestController("RestUserController")
 @RequestMapping(path="/api/users", produces = "application/json")
 @CrossOrigin(origins = "*")
 public class UserController {
