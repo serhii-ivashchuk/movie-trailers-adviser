@@ -8,4 +8,8 @@ import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 public class UserRepositoryUserDetailsService implements UserDetails {
 
     JpaUserRepository jpaUserRepository;
+
+    public UserRepositoryUserDetailsService userRepositoryUserDetailsService(JpaUserRepository jpaUserRepository) {
+        this.jpaUserRepository = jpaUserRepository;
+    }
 }
