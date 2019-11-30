@@ -34,5 +34,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .antMatchers("/actors/**", "/movies/**")
+                .hasRole("ROLE_USER")
+                .antMatchers("/", "/**")
+                .permitAll();
     }
 }
