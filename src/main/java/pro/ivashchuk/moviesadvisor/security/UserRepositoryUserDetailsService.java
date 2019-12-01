@@ -14,7 +14,7 @@ public class UserRepositoryUserDetailsService implements UserDetailsService {
     JpaUserRepository jpaUserRepository;
 
     @Autowired
-    public UserRepositoryUserDetailsService userRepositoryUserDetailsService(JpaUserRepository jpaUserRepository) {
+    public UserRepositoryUserDetailsService(JpaUserRepository jpaUserRepository) {
         this.jpaUserRepository = jpaUserRepository;
     }
 
