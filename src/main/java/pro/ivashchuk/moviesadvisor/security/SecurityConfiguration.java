@@ -37,7 +37,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/actors/**", "/movies/**")
-                .hasRole("ROLE_USER")
+                .hasRole("USER")
                 .antMatchers("/", "/**")
                 .permitAll();
     }
