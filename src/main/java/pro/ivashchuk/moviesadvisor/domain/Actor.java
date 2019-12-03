@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Set;
 
 @Entity
 public class Actor {
@@ -14,6 +15,8 @@ public class Actor {
 
     private String name;
     private String surname;
+
+    Set<Movie> playedMovies;
 
     public String getName() {
         return name;
