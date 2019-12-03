@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import java.util.Set;
 
 @Entity
 public class Movie {
@@ -21,6 +22,8 @@ public class Movie {
     private String poster;
 
     private String youtubeLink;
+
+    Set<Actor> movieActors;
 
     public Long getId() {
         return id;
