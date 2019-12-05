@@ -1,9 +1,6 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -16,6 +13,7 @@ public class Actor {
     private String name;
     private String surname;
 
+    @ManyToMany(mappedBy = "movieActors")
     Set<Movie> playedMovies;
 
     public String getName() {
