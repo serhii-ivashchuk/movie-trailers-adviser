@@ -1,9 +1,6 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
@@ -23,6 +20,11 @@ public class Movie {
 
     private String youtubeLink;
 
+    @ManyToMany
+    @JoinTable(
+            name = "movie_actor",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "actor_id"))
     Set<Actor> movieActors;
 
     public Long getId() {
