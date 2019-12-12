@@ -8,4 +8,8 @@ import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
 @RequestMapping(path="/api/movies", produces = "application/json")
 public class MovieController {
     private JpaMovieRepository jpaMovieRepository;
+
+    public MovieController(JpaMovieRepository jpaMovieRepository) {
+        this.jpaMovieRepository = jpaMovieRepository;
+    }
 }
