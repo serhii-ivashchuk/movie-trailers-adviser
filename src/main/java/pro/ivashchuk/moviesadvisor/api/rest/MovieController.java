@@ -9,7 +9,7 @@ import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
 
 import java.util.List;
 
-@RestController
+@RestController("RestMovieController")
 @RequestMapping(path="/api/movies", produces = "application/json")
 public class MovieController {
 
