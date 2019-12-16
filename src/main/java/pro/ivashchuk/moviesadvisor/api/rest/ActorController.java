@@ -8,7 +8,7 @@ import pro.ivashchuk.moviesadvisor.repository.JpaActorRepository;
 
 import java.util.List;
 
-@RestController
+@RestController("RestActorController")
 @RequestMapping(path="/api/actors", produces = "application/json")
 public class ActorController {
 
