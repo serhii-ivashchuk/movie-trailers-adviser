@@ -12,6 +12,7 @@ public class Actor {
 
     private String name;
     private String surname;
+    private String picture;
 
     @ManyToMany(mappedBy = "movieActors")
     Set<Movie> playedMovies;
@@ -32,18 +33,28 @@ public class Actor {
         this.surname = surname;
     }
 
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
     public Actor() {
     }
 
-    public Actor(Long id, String name, String surname) {
+    public Actor(Long id, String name, String surname, String picture) {
         this.id = id;
         this.name = name;
         this.surname = surname;
+        this.picture = picture;
     }
 
-    public Actor(String name, String surname) {
+    public Actor(String name, String surname,  String picture) {
         this.name = name;
         this.surname = surname;
+        this.picture = picture;
     }
 
     @Override
