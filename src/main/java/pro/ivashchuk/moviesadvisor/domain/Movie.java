@@ -27,6 +27,13 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "actor_id"))
     Set<Actor> movieActors;
 
+    @ManyToMany
+    @JoinTable(
+            name = "movie_user",
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    Set<User> movieUserCommitters;
+
     public Long getId() {
         return id;
     }
