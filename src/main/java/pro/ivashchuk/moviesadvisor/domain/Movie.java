@@ -13,7 +13,7 @@ public class Movie {
 
     @NotBlank(message="Movie Name is required")
     private String movieName;
-
+    private int year;
     private int ranking;
 
     private String poster;
