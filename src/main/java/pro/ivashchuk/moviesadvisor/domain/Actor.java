@@ -1,5 +1,7 @@
 package pro.ivashchuk.moviesadvisor.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Set;
 
