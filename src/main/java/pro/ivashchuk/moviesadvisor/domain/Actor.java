@@ -14,6 +14,11 @@ public class Actor {
     private String surname;
     private String picture;
 
+    @Lob
+    @Column(name="image")
+    @Type(type="org.hibernate.type.BinaryType")
+    private byte[] image;
+
     @ManyToMany(mappedBy = "movieActors")
     Set<Movie> playedMovies;
 
