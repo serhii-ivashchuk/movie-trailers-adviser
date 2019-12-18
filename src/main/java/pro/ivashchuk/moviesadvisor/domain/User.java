@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Set;
 
 @Entity
 @Table(name = "Users")
@@ -78,6 +79,9 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    @ManyToMany(mappedBy = "movieUserCommitters")
+    Set<Movie> committedMovies;
 
     public User() {
     }
