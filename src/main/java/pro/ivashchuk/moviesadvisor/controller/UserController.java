@@ -50,7 +50,7 @@ public class UserController {
         jpaUserRepository.save(user.toUser(passwordEncoder));
         log.info("processNewUser of UserRegistrationController is invoked");
         log.info("User: " + user);
-        return "redirect:/";
+        return "redirect:/login";
     }
     @PostMapping("/user/{id}")
     public String updateUserById(@PathVariable("id") Long id, Model model){
