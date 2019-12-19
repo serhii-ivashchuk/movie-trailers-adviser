@@ -50,4 +50,10 @@ public class ActorController {
 
         return jpaActorRepository.save(actor);
     }
+
+    @DeleteMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteActor(@PathVariable("id") Long id) {
+        jpaActorRepository.deleteById(id);
+    }
 }
