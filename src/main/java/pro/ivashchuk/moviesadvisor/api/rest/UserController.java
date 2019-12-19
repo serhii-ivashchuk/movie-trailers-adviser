@@ -38,4 +38,16 @@ public class UserController {
     public User updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         return jpaUserRepository.save(user);
     }
+
+    @PatchMapping(path = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User patchUser(@PathVariable("id") Long id, @RequestBody User patchUser) {
+        User user = jpaUserRepository.findById(id).get();
+        if (patchUser.getUsername() != null) {
+            user.setUsername(patchUser.getUsername());
+            //etc
+        }
+
+        return jpaUserRepository.save(user);
+    }
 }
