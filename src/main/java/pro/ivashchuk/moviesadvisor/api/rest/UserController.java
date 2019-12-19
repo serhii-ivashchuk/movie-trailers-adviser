@@ -1,16 +1,14 @@
 package pro.ivashchuk.moviesadvisor.api.rest;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import pro.ivashchuk.moviesadvisor.domain.User;
 import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 
 import java.util.List;
 
 @RestController("RestUserController")
-@RequestMapping(path="/api/users", produces = "application/json")
+@RequestMapping(path = "/api/users", produces = "application/json")
 @CrossOrigin(origins = "*")
 public class UserController {
     private JpaUserRepository jpaUserRepository;
@@ -20,8 +18,8 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAllUsers(){
-       return jpaUserRepository.findAll();
+    public List<User> getAllUsers() {
+        return jpaUserRepository.findAll();
     }
 
     @GetMapping("/registration")
