@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie:</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
+</head>
+<body>
+<a href="/movies">Movies</a><br>
+<a href="/movies/addNewMovie">Add New Movie</a><br>
+<a href="/actors">Actors</a><br>
+<a href="/actors/addNewActor"> Add New Actor</a><br>
+
+Let's update movie!
+<form th:object="${patchMovie}" method="Post"
+      th:action="@{/movies/Movie/{id}/patch(id=${patchMovie.id})}">
+    <div><h3>Movie Name:</h3>
+        <label for="movieName">Movie Name: </label>
+        <input name="movieName" type="text" th:field="*{movieName}"/><br/>
+        <label for="ranking">Your Movie Rank (from 1 to 10): </label>
+        <input name="ranking" type="text" th:field="*{ranking}"/><br>
+        <label for="poster">Your Movie poster: </label>
+        <input name="poster" type="text" th:field="*{poster}"/><br/>
+        <input type="submit" value="Submit movie"/>
+    </div>
+</form>
+</body>
+</html>
