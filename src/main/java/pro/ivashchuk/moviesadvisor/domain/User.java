@@ -60,6 +60,23 @@ public class User implements UserDetails {
     }
 
 
+    @ManyToMany(mappedBy = "movieUserCommitters")
+    Set<Movie> committedMovies;
+
+    public User() {
+    }
+
+    public User(String username, String password, String phrase) {
+        this.username = username;
+        this.password = password;
+        this.phrase = phrase;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -78,23 +95,6 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    @ManyToMany(mappedBy = "movieUserCommitters")
-    Set<Movie> committedMovies;
-
-    public User() {
-    }
-
-    public User(String username, String password, String phrase) {
-        this.username = username;
-        this.password = password;
-        this.phrase = phrase;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
