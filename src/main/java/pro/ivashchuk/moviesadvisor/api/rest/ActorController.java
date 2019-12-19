@@ -38,4 +38,16 @@ public class ActorController {
     public Actor updateActor(@PathVariable("id") Long id, @RequestBody Actor actor) {
         return jpaActorRepository.save(actor);
     }
+
+    @PatchMapping(path = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Actor patchActor(@PathVariable("id") Long id, @RequestBody Actor patchActor) {
+        Actor actor = jpaActorRepository.findById(id).get();
+        if (patchActor.getName() != null) {
+            actor.setName(patchActor.getName());
+            //etc
+        }
+
+        return jpaActorRepository.save(actor);
+    }
 }
