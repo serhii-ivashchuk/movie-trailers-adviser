@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
+import pro.ivashchuk.moviesadvisor.service.MovieServiceImpl;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -23,10 +24,13 @@ public class MovieController {
 
     private JpaMovieRepository jpaMovieRepository;
 
-    public MovieController(JpaMovieRepository jpaMovieRepository) {
-        this.jpaMovieRepository = jpaMovieRepository;
-    }
+    private MovieServiceImpl movieServiceImpl;
 
+    public MovieController(JpaMovieRepository jpaMovieRepository,
+                           MovieServiceImpl movieServiceImpl) {
+        this.jpaMovieRepository = jpaMovieRepository;
+        this.movieServiceImpl = movieServiceImpl;
+    }
 
     @GetMapping
     public String getAllMovies(Model model) {
