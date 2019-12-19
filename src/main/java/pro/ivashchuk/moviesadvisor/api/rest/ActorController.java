@@ -32,4 +32,10 @@ public class ActorController {
     public Actor addNewActor(@RequestBody Actor actor) {
         return jpaActorRepository.save(actor);
     }
+
+    @PutMapping(path = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Actor updateActor(@PathVariable("id") Long id, @RequestBody Actor actor) {
+        return jpaActorRepository.save(actor);
+    }
 }
