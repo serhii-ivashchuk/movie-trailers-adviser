@@ -66,10 +66,8 @@ public class UserController {
     }
 
     @GetMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable("id") Long id, Model model) {
-        User user = jpaUserRepository.findById(id).get();
-        jpaUserRepository.delete(user);
-        model.addAttribute("user", user);
+    public String deleteUser(@PathVariable("id") Long id) {
+        jpaUserRepository.delete(jpaUserRepository.findById(id).get());
         return "redirect:/users";
     }
 }
