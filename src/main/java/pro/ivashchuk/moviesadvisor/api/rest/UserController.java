@@ -32,4 +32,10 @@ public class UserController {
     public User addNewUser(@RequestBody User user) {
         return jpaUserRepository.save(user);
     }
+
+    @PutMapping(path = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User updateUser(@PathVariable("id") Long id, @RequestBody User user) {
+        return jpaUserRepository.save(user);
+    }
 }
