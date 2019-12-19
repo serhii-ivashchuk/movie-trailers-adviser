@@ -1,9 +1,7 @@
 package pro.ivashchuk.moviesadvisor.api.rest;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import pro.ivashchuk.moviesadvisor.domain.Actor;
 import pro.ivashchuk.moviesadvisor.repository.JpaActorRepository;
 
@@ -27,5 +25,11 @@ public class ActorController {
     @GetMapping(path = "/{id}", produces = "application/json")
     public Actor getActorById(@PathVariable("id") Long id) {
         return jpaActorRepository.findById(id).get();
+    }
+
+    @PostMapping(path = "/addNewActor", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Actor addNewActor(@RequestBody Actor actor) {
+        return jpaActorRepository.save(actor);
     }
 }
