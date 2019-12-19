@@ -22,8 +22,9 @@ public class UserController {
         return jpaUserRepository.findAll();
     }
 
-    @GetMapping("/registration")
-    public String addNewUser() {
-        return "";
+    @PostMapping(path = "/addNewUser", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User addNewUser(@RequestBody User user) {
+        return jpaUserRepository.save(user);
     }
 }
