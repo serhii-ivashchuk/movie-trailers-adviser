@@ -50,4 +50,10 @@ public class UserController {
 
         return jpaUserRepository.save(user);
     }
+
+    @DeleteMapping(path = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteUser(@PathVariable("id") Long id) {
+        jpaUserRepository.deleteById(id);
+    }
 }
