@@ -22,6 +22,11 @@ public class UserController {
         return jpaUserRepository.findAll();
     }
 
+    @GetMapping(path = "/{id}", produces = "application/json")
+    public User getUserById(@PathVariable("id") Long id) {
+        return jpaUserRepository.findById(id).get();
+    }
+
     @PostMapping(path = "/addNewUser", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public User addNewUser(@RequestBody User user) {
