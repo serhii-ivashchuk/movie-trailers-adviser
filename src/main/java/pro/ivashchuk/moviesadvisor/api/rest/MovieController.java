@@ -6,17 +6,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
+import pro.ivashchuk.moviesadvisor.service.MovieServiceImpl;
 
 import java.util.List;
 
 @RestController("RestMovieController")
-@RequestMapping(path="/api/movies", produces = "application/json")
+@RequestMapping(path = "/api/movies", produces = "application/json")
 public class MovieController {
 
     private JpaMovieRepository jpaMovieRepository;
 
-    public MovieController(JpaMovieRepository jpaMovieRepository) {
+    private MovieServiceImpl movieServiceImpl;
+
+    public MovieController(JpaMovieRepository jpaMovieRepository, MovieServiceImpl movieServiceImpl) {
         this.jpaMovieRepository = jpaMovieRepository;
+        this.movieServiceImpl = movieServiceImpl;
     }
 
     @GetMapping
