@@ -28,8 +28,8 @@ public class MovieController {
         return jpaMovieRepository.findAll();
     }
 
-    @GetMapping
-    public Movie getMovieById(@PathVariable("id") Long id){
+    @GetMapping(path = "/{id}", produces = "application/json")
+    public Movie getMovieById(@PathVariable("id") Long id) {
         return jpaMovieRepository.findById(id).get();
     }
 }
