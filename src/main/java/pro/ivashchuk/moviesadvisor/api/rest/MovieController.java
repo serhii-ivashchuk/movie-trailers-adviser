@@ -24,7 +24,7 @@ public class MovieController {
     }
 
     @GetMapping
-    public List<Movie> getAllMovies(){
+    public List<Movie> getAllMovies() {
         return jpaMovieRepository.findAll();
     }
 
