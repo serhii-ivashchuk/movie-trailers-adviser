@@ -36,4 +36,10 @@ public class MovieController {
     public Movie addNewMovie(@RequestBody Movie movie) {
         return jpaMovieRepository.save(movie);
     }
+
+    @PutMapping(path = "/{id}", produces = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Movie updateMovie(@PathVariable("id") Long id, @RequestBody Movie movie) {
+        return jpaMovieRepository.save(movie);
+    }
 }
