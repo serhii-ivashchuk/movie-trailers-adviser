@@ -2,6 +2,7 @@ package pro.ivashchuk.moviesadvisor.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -32,7 +33,7 @@ public class Movie {
             name = "movie_user",
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
-    Set<User> movieUserCommitters;
+    private Set<User> movieUserCommitters = new HashSet<>();
 
     public Long getId() {
         return id;
