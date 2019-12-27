@@ -66,6 +66,16 @@ public class MovieController {
         return "Movie";
     }
 
+    @GetMapping("/Movie/{id}/patch")
+    public String getMovieForPatchById(@PathVariable("id") Long id, Model model) {
+        log.info("getMovieForPatchById() of MovieController is invoked");
+        log.info("getMovieById() of MovieController is invoked");
+        Movie patchMovie = jpaMovieRepository.findById(id).get();
+        log.info("patchMovie " + patchMovie);
+        model.addAttribute("patchMovie", patchMovie);
+        return "Update_Movie";
+    }
+
     @GetMapping("/deleteMovie/{id}")
     public String deleteMovie(@PathVariable("id") Long id, Model model) {
         jpaMovieRepository.delete(jpaMovieRepository.findById(id).get());
