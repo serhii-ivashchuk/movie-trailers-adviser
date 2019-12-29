@@ -21,7 +21,7 @@ public class MovieTest {
     @Autowired
     TestEntityManager testEntityManager;
 
-    Movie movie = new Movie(null, "Green Mile", 10, "Green Mile.jpg", "");
+    Movie movie = new Movie(null, "Green Mile", 10, "Green Mile.jpg", "youtube.com/watch?v=Ki4haFrqSrw");
 
     @Test
     public void shouldGenerateId() {
