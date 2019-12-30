@@ -13,6 +13,8 @@ public interface JpaMovieRepository extends JpaRepository<Movie, Long> {
 
     Optional<Movie> findById(Long id);
 
+    Optional<Movie> findByMovieName(String movieName);
+
     Movie save(Movie movie);
 
     void delete(Movie movie);
