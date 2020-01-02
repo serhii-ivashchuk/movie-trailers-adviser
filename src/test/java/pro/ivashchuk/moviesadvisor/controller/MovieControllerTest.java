@@ -8,7 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -28,11 +27,19 @@ public class MovieControllerTest {
     }
 
     @Test
-    public void testMovieControllerReturnsAddNewMoviePageView() throws Exception{
+    public void testMovieControllerReturnsAddNewMoviePageView() throws Exception {
         mockMvc.perform(get("/movies/addNewMovie"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("Add_New_Movie"))
                 .andExpect(content().string(containsString("Let's add new movie!")));
+    }
+
+    @Test
+    public void testMovieControllerReturnsMoviePageView() throws Exception {
+        mockMvc.perform(get("/Movie/{id}"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("Movie"))
+                .andExpect(content().string(containsString("Movie page")));
     }
 
 //    All Movies!
