@@ -3,6 +3,7 @@ package pro.ivashchuk.moviesadvisor.domain;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -20,9 +21,18 @@ public class Actor {
     @Column(name="image")
     @Type(type="org.hibernate.type.BinaryType")
     private byte[] image;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY )
+    private Long id;
 
-    @ManyToMany(mappedBy = "movieActors")
-    Set<Movie> playedMovies;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -46,6 +56,18 @@ public class Actor {
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Set<Movie> getPlayedMovies() {
+        return playedMovies;
+    }
+
+    public void setPlayedMovies(Set<Movie> playedMovies) {
+        this.playedMovies = playedMovies;
+    }
+
+    public void setMovieToPlayedMovies(Movie movie) {
+        this.playedMovies.add(movie);
     }
 
     public Actor() {
