@@ -13,4 +13,7 @@ public class RoleTest {
     @Autowired
     TestEntityManager testEntityManager;
 
+    Role role = new Role("user");
+
+
 }
