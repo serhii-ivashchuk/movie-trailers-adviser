@@ -2,6 +2,7 @@ package pro.ivashchuk.moviesadvisor.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pro.ivashchuk.moviesadvisor.domain.Movie;
 import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
+import pro.ivashchuk.moviesadvisor.repository.JpaUserRepository;
 import pro.ivashchuk.moviesadvisor.service.MovieServiceImpl;
 
 import javax.validation.Valid;
@@ -23,13 +25,15 @@ public class MovieController {
     final static Logger log = LoggerFactory.getLogger(MovieController.class);
 
     private JpaMovieRepository jpaMovieRepository;
+    private JpaUserRepository jpaUserRepository;
 
     private MovieServiceImpl movieServiceImpl;
 
     public MovieController(JpaMovieRepository jpaMovieRepository,
-                           MovieServiceImpl movieServiceImpl) {
+                           MovieServiceImpl movieServiceImpl, JpaUserRepository jpaUserRepository) {
         this.jpaMovieRepository = jpaMovieRepository;
         this.movieServiceImpl = movieServiceImpl;
+        this.jpaUserRepository = jpaUserRepository;
     }
 
     @GetMapping
@@ -48,8 +52,10 @@ public class MovieController {
     }
 
     @PostMapping("/addNewMovie")
-    public String processNewMovie(@Valid Movie movie) {
+    public String processNewMovie(@Valid Movie movie, @AuthenticationPrincipal String username) {
         log.info("processNewMovie (http post()) of MovieController is invoked");
+        log.info("User: " + username);
+        movie.setUserToMovieUserCommitters(jpaUserRepository.findByUsername(username));
         jpaMovieRepository.save(movie);
         log.info("processNewMovie()  jpaMovieRepository.save() is invoked");
         log.info("Movie: " + movie);
@@ -59,9 +65,9 @@ public class MovieController {
     @GetMapping("/Movie/{id}")
     public String getMovieById(@PathVariable("id") Long id, Model model) {
         log.info("getMovieById() of MovieController is invoked");
-        System.out.println("getMovieById() of MovieController is invoked");
+        log.info("getMovieById() of MovieController is invoked");
         Movie movie = jpaMovieRepository.findById(id).get();
-        System.out.println("movie " + movie);
+        log.info("movie " + movie);
         model.addAttribute("movie", movie);
         return "Movie";
     }
