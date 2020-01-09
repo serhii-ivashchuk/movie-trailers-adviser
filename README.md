@@ -3,7 +3,7 @@ This is the repository for code of Movie Advisor App by Serhii Ivashchuk.
 
 ## **Technology stack**
 
-* Java 8 (1.8.0_202)
+* Java 8 (1.8.0_241)
 * Spring Boot 2.1.8
 * Maven 
 
