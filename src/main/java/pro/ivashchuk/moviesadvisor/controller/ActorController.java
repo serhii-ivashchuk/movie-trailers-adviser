@@ -52,6 +52,8 @@ public class ActorController {
     public String getActorById(@PathVariable("id") Long id, Model model) {
         Actor actor = jpaActorRepository.findById(id).get();
         model.addAttribute("actor", actor);
+        Set<Movie> playedMovies = actor.getPlayedMovies();
+        model.addAttribute("playedMovies", playedMovies);
         return "Actor";
     }
 
