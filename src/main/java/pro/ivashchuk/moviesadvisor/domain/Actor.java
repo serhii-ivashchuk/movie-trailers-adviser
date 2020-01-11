@@ -18,8 +18,8 @@ public class Actor {
     private String picture;
 
     @Lob
-    @Column(name="image")
-    @Type(type="org.hibernate.type.BinaryType")
+    @Column(name = "image")
+    @Type(type = "org.hibernate.type.BinaryType")
     private byte[] image;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
