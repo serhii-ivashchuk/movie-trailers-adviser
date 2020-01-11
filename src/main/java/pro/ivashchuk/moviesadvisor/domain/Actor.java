@@ -21,8 +21,7 @@ public class Actor {
     @Type(type = "org.hibernate.type.BinaryType")
     private byte[] image;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    //@GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.AUTO)    //@GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
 
     public Long getId() {
