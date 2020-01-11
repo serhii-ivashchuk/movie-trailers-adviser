@@ -18,9 +18,11 @@ public class ActorController {
 
     final static Logger log = LoggerFactory.getLogger(ActorController.class);
 
-    private JpaActorRepository jpaActorRepository;
+    private final JpaActorRepository jpaActorRepository;
+    private final JpaMovieRepository jpaMovieRepository;
 
-    public ActorController(JpaActorRepository jpaActorRepository) {
+
+    public ActorController(JpaActorRepository jpaActorRepository, JpaMovieRepository jpaMovieRepository, ActorServiceImpl actorServiceImpl) {
         this.jpaActorRepository = jpaActorRepository;
     }
 
