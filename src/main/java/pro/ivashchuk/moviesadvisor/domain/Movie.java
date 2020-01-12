@@ -26,7 +26,7 @@ public class Movie {
             name = "movie_actor",
             joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id"))
-    Set<Actor> movieActors;
+    Set<Actor> movieActors = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
