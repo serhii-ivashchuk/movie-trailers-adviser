@@ -20,9 +20,9 @@ public class Actor {
     @Column(name = "image")
     @Type(type = "org.hibernate.type.BinaryType")
     private byte[] image;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
+    @ManyToMany(mappedBy = "movieActors")
+    Set<Movie> playedMovies = new HashSet<>();
 
     public Long getId() {
         return id;
