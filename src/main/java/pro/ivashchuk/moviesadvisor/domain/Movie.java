@@ -71,6 +71,14 @@ public class Movie {
         this.youtubeLink = youtubeLink;
     }
 
+    public Set<User> getMovieUserCommitters() {
+        return movieUserCommitters;
+    }
+
+    public void setMovieUserCommitters(Set<User> movieUserCommitters) {
+        this.movieUserCommitters = movieUserCommitters;
+    }
+
     public Movie() {
     }
 
