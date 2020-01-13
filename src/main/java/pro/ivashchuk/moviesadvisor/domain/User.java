@@ -84,6 +84,14 @@ public class User implements UserDetails {
         this.phrase = phrase;
     }
 
+    public Set<Movie> getCommittedMovies() {
+        return committedMovies;
+    }
+
+    public void setCommittedMovies(Set<Movie> committedMovies) {
+        this.committedMovies = committedMovies;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
