@@ -4,6 +4,7 @@ package pro.ivashchuk.moviesadvisor.domain;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "role")
@@ -16,6 +17,10 @@ public class Role implements GrantedAuthority {
 
     @Column(name = "role")
     private String role;
+
+    @Transient
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
     public Role() {
     }
