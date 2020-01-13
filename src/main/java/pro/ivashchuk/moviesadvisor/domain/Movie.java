@@ -95,6 +95,10 @@ public class Movie {
         this.ranking = ranking;
     }
 
+    public void setUserToMovieUserCommitters(User user) {
+        this.movieUserCommitters.add(user);
+    }
+
     @Override
     public String toString() {
         return String.format(
