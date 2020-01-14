@@ -50,7 +50,7 @@ public class ActorController {
         return "redirect:/actors";
     }
 
-    @GetMapping("/Actor/{id}")
+    @GetMapping("/actor/{id}")
     public String getActorById(@PathVariable("id") Long id, Model model) {
         Actor actor = jpaActorRepository.findById(id).get();
         model.addAttribute("actor", actor);
