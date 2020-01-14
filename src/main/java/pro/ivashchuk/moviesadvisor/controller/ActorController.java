@@ -60,7 +60,7 @@ public class ActorController {
     }
 
     @GetMapping("/deleteActor/{id}")
-    public String deleteActor(@PathVariable("id") Long id, Model model){
+    public String deleteActor(@PathVariable("id") Long id, Model model) {
         jpaActorRepository.delete(jpaActorRepository.findById(id).get());
         return "redirect:/actors";
     }
