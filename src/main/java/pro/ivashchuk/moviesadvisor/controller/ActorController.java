@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pro.ivashchuk.moviesadvisor.domain.Actor;
+import pro.ivashchuk.moviesadvisor.domain.Movie;
 import pro.ivashchuk.moviesadvisor.repository.JpaActorRepository;
 
 import javax.validation.Valid;
