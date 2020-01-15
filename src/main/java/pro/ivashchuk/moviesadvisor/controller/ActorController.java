@@ -61,6 +61,9 @@ public class ActorController {
 
     @GetMapping("/actor/{id}/addNewMovie")
     public String getAddNewMovieToActorById(@PathVariable("id") Long id, Model model) {
+        Actor actor = jpaActorRepository.findById(id).get();
+        model.addAttribute("actor", actor);
+        model.addAttribute("movie", new Movie());
         return "Add_New_Movie";
     }
 
