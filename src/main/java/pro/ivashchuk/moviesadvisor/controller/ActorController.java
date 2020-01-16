@@ -70,6 +70,11 @@ public class ActorController {
         return "Add_New_Movie";
     }
 
+    @GetMapping("/actor/{id}/patch")
+    public String getActorForPatchById(@PathVariable("id") Long id, Model model) {
+        return "Update_Actor";
+    }
+
     @GetMapping("/deleteActor/{id}")
     public String deleteActor(@PathVariable("id") Long id, Model model) {
         jpaActorRepository.delete(jpaActorRepository.findById(id).get());
