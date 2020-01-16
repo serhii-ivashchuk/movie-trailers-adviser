@@ -72,7 +72,15 @@ public class ActorController {
 
     @PostMapping("/actor/{id}/addNewMovie")
     public String processAddNewMovieToActorById(@PathVariable("id") Long id, Movie movie) {
-        return "";
+        Actor actor = jpaActorRepository.findById(id).get();
+        String movieName = movie.getMovieName();
+        Optional<Movie> findByMovieName = jpaMovieRepository.findByMovieName(movieName);
+        if (!findByMovieName.isPresent()) {
+            System.out.println("Movie: '" + movieName + "' not found");
+        }
+        jpaMovieRepository.save(movie);
+        jpaActorRepository.save(actorServiceImpl.addMovieToActor(movie, actor));
+        return "redirect:/actors/actor/" + actor.getId();
     }
 
     @GetMapping("/actor/{id}/patch")
