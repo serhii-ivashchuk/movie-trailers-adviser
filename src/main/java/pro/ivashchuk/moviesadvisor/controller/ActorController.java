@@ -23,6 +23,8 @@ public class ActorController {
 
     private final JpaActorRepository jpaActorRepository;
     private final JpaMovieRepository jpaMovieRepository;
+    @Autowired
+    private final ActorServiceImpl actorServiceImpl;
 
 
     public ActorController(JpaActorRepository jpaActorRepository, JpaMovieRepository jpaMovieRepository, ActorServiceImpl actorServiceImpl) {
