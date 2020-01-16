@@ -70,6 +70,11 @@ public class ActorController {
         return "Add_New_Movie";
     }
 
+    @PostMapping("/actor/{id}/addNewMovie")
+    public String processAddNewMovieToActorById(@PathVariable("id") Long id, Movie movie) {
+        return "";
+    }
+
     @GetMapping("/actor/{id}/patch")
     public String getActorForPatchById(@PathVariable("id") Long id, Model model) {
         Actor patchActor = jpaActorRepository.findById(id).get();
