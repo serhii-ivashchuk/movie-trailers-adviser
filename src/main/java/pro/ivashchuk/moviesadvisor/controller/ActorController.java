@@ -72,6 +72,8 @@ public class ActorController {
 
     @GetMapping("/actor/{id}/patch")
     public String getActorForPatchById(@PathVariable("id") Long id, Model model) {
+        Actor patchActor = jpaActorRepository.findById(id).get();
+        model.addAttribute("patchActor", patchActor);
         return "Update_Actor";
     }
 
