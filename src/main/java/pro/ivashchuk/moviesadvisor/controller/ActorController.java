@@ -29,6 +29,8 @@ public class ActorController {
 
     public ActorController(JpaActorRepository jpaActorRepository, JpaMovieRepository jpaMovieRepository, ActorServiceImpl actorServiceImpl) {
         this.jpaActorRepository = jpaActorRepository;
+        this.jpaMovieRepository = jpaMovieRepository;
+        this.actorServiceImpl = actorServiceImpl;
     }
 
     @GetMapping
