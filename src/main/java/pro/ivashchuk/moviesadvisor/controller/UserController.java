@@ -51,16 +51,17 @@ public class UserController {
         log.info("User: " + user);
         return "redirect:/login";
     }
-    @PostMapping("/user/{id}")
-    public String updateUserById(@PathVariable("id") Long id, Model model){
-
-        return "User";
-    }
 
     @GetMapping("/user/{id}")
     public String getUserById(@PathVariable("id") Long id, Model model) {
         User user = jpaUserRepository.findById(id).get();
         model.addAttribute("user", user);
+        return "User";
+    }
+
+    @PostMapping("/user/{id}")
+    public String updateUserById(@PathVariable("id") Long id, Model model){
+
         return "User";
     }
 
