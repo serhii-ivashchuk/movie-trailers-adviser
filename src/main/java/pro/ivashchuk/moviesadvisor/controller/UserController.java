@@ -59,7 +59,7 @@ public class UserController {
         return "User";
     }
 
-    @PostMapping("/user/{id}")
+    @GetMapping("/user/{id}/change")
     public String updateUserById(@PathVariable("id") Long id, Model model){
 
         return "User";
