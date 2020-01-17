@@ -22,9 +22,8 @@ public class UserController {
 
     final static Logger log = LoggerFactory.getLogger(UserController.class);
 
-    private JpaUserRepository jpaUserRepository;
-    private PasswordEncoder passwordEncoder;
-
+    private final JpaUserRepository jpaUserRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public UserController(JpaUserRepository jpaUserRepository, PasswordEncoder passwordEncoder) {
         this.jpaUserRepository = jpaUserRepository;

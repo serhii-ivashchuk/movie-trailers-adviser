@@ -28,4 +28,12 @@ public class MovieTest {
         testEntityManager.persistFlushFind(movie);
         assertNotNull(movie.getId());
     }
+
+    @Test
+    public void shouldCreateNewMovie() {
+//        testEntityManager.persistFlushFind(movie);
+//        assertNotNull(movie.getId());
+
+    }
+
 }

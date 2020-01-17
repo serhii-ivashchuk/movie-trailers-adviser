@@ -1,11 +1,14 @@
 package pro.ivashchuk.moviesadvisor.controller;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import pro.ivashchuk.moviesadvisor.domain.Movie;
+import pro.ivashchuk.moviesadvisor.repository.JpaMovieRepository;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -17,6 +20,17 @@ public class MovieControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Autowired
+    JpaMovieRepository jpaMovieRepository;
+
+    Movie movie;
+
+    @Before
+    public void setUp() {
+        movie = new Movie(1L, "Green Mile", 10, "Green Mile.jpg", "youtube.com/watch?v=Ki4haFrqSrw");
+    }
+
 
     @Test
     public void testMovieControllerReturnsAllMoviesPageView() throws Exception{
@@ -36,7 +50,8 @@ public class MovieControllerTest {
 
     @Test
     public void testMovieControllerReturnsMoviePageView() throws Exception {
-        mockMvc.perform(get("/Movie/{id}"))
+        jpaMovieRepository.save(movie);
+        mockMvc.perform(get("/movies/Movie/1"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("Movie"))
                 .andExpect(content().string(containsString("Movie page")));

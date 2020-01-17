@@ -48,3 +48,6 @@ nbdist/
 *.zip
 *.tar.gz
 *.rar
+
+*** custom files ***
+Notes.txt
