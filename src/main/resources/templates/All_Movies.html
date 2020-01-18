@@ -12,6 +12,7 @@ All Movies
 <a href="/movies/addNewMovie">Add New Movie!</a><br>
 <br>
 <p>Here will be the Movies List</p>
+<ol>
 <div th:each="movie : ${movies}">
     <span text="">Movie Name</span>
     <p th:text="${movie.movieName}">Movie Name</p>
@@ -19,6 +20,7 @@ All Movies
     <p th:text="${movie.ranking}">Rank</p><br/>
 
 </div>
+    </ol>
 <p>End of the Movies List</p>
 </body>
 </html>
