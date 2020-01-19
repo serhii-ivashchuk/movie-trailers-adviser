@@ -19,6 +19,9 @@ All Movies
     <p th:text="${movie.movieName}">Movie Name</p>
     <span text="">Movie Rank</span>
     <p th:text="${movie.ranking}">Rank</p><br/>
+        <a th:href="@{/movies/Movie/{id}(id=${movie.id})}"> View more about movie</a>
+        <a th:href="@{/movies/Movie/{id}/update(id=${movie.id})}"> Update movie</a>
+        <a th:href="@{/movies/Movie/{id}/delete(id=${movie.id})}"> Delete movie</a>
     </li>
 </div>
     </ol>
