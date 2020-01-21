@@ -9,6 +9,10 @@
 <body>
 Let's add new actor!
 <form method="POST" th:object="${actor}">
+    <div><h3>Actor:</h3>
+        <label for="Actor name">Actor Name: </label>
+        <input name="Actor name" type="text" th:field="*{name}"/>
+    </div>
 </form>
 </body>
 </html>
