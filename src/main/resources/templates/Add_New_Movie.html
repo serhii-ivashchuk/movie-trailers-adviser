@@ -7,6 +7,12 @@
     <link rel="stylesheet" th:href="@{css/styles.css}"/>
 </head>
 <body>
+<a href="/">Home</a>
+<a href="/movies">Movies</a><br>
+<a href="/movies/addNewMovie">Add New Movie</a><br>
+<a href="/actors">Actors</a><br>
+<a href="/actors/addNewActor"> Add New Actor</a><br>
+
 Let's add new movie!
 <form method="POST" th:object="${movie}">
     <div><h3>Movie Name:</h3>
