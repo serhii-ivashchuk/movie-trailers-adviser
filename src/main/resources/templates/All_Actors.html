@@ -20,7 +20,7 @@ All Actors
     <span text="">Actor Surname</span>
     <p th:text="${actor.surname}">Actor Surname</p><br/>
     <p th:text="${actor.id}">Actor id</p>
-
+    <a th:href="@{/actors/actor/{id}(id=${actor.id})}"><span th:text="${actor.name}">Name</span><span th:text="${actor.surname}"> Surname</span></a>
 </div>
 <p>End of the Actors List</p>
 </body>
