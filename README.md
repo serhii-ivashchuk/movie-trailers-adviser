@@ -1,5 +1,5 @@
-## **Movie Advisor App**
-This is the repository for code of Movie Advisor App by Serhii Ivashchuk.
+## **Movie Trailers Adviser App**
+This is the repository for Movie Trailers Adviser App code by Serhii Ivashchuk.
 
 ## **Technology stack**
 
